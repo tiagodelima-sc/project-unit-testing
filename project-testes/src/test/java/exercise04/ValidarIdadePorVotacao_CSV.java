@@ -13,7 +13,7 @@ import votacao.Votacao;
 @RunWith(JUnitParamsRunner.class)
 public class ValidarIdadePorVotacao_CSV {
 	
-	@Test
+	@Test(timeout = 100)
 	@FileParameters(value = "src/test/resources/massa_de_dados.csv", mapper = CsvWithHeaderMapper.class)
 	public void validarObrigatoriedadeDeVoto(String nome, int anoDeNascimento, String resultado) {
 		assertEquals(resultado, Votacao.podeVotar(nome, anoDeNascimento));

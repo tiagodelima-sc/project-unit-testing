@@ -1,4 +1,4 @@
-package exercise07;
+package votacao_categorias;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;

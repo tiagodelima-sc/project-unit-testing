@@ -1,13 +1,10 @@
-package exercise05;
+package votacao_categorias;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import exercise01.VotacaoTest;
-import exercise02.ValidarIdadePorVotacao_DDT;
-import exercise03.ValidarIdadePorVotacao_Parametros;
-import exercise04.ValidarIdadePorVotacao_CSV;
+import votacao_categorias.VotacaoTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({

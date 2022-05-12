@@ -1,4 +1,4 @@
-package exercise07;
+package votacao_categorias;
 
 import org.junit.experimental.categories.Categories;
 import org.junit.experimental.categories.Categories.IncludeCategory;

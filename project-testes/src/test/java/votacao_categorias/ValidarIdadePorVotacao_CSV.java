@@ -1,4 +1,4 @@
-package exercise04;
+package votacao_categorias;
 
 import static org.junit.Assert.*;
 

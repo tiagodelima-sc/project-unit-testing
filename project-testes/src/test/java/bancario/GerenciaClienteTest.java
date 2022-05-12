@@ -54,7 +54,7 @@ public class GerenciaClienteTest {
 	}
 	
 	/*
-	 * Teste para verificar se a pesquisa está 
+	 * Teste para verificar se a pesquisa estï¿½ 
 	 * retornando o cliente pela ID.
 	 * */
 	
@@ -69,7 +69,21 @@ public class GerenciaClienteTest {
 	}
 	
 	/*
-	 * Teste para verificar se o cliente está sendo 
+	 * Teste para verificar se a pesquisa 
+	 * retornando um cliente nulo, que nÃ£o existe.
+	 * */
+	
+	@Test
+	public void testPesquisaCliente_Inexistente() {
+		
+		Cliente cliente = gerenciamentoClientes.pesquisaCliente(4);
+		
+		assertNull(cliente);
+		
+	}
+	
+	/*
+	 * Teste para verificar se o cliente estï¿½ sendo 
 	 * removido da lista do banco.
 	 * */
 	
@@ -85,7 +99,22 @@ public class GerenciaClienteTest {
 	}
 	
 	/*
-	 * Teste para verificar se a transferencia está 
+	 * Teste para remover cliente que nao 
+	 * existe na da lista do banco.
+	 * */
+	
+	@Test
+	public void testRemoveCliente_Inexistente() {
+		
+		boolean clienteRemovido = gerenciamentoClientes.removeCliente(4);
+		
+		assertEquals(clienteRemovido, false);
+		assertEquals(gerenciamentoClientes.getClientesDoBanco().size(), 2);
+		
+	}
+	
+	/*
+	 * Teste para verificar se a transferencia estï¿½ 
 	 * saindo da origem e chegando no destino, 
 	 * descontando o valor e acrescentando em outro .
 	 * */
@@ -113,6 +142,56 @@ public class GerenciaClienteTest {
 		assertEquals(conta1.getSaldo(), 250, 0);
 		assertEquals(conta2.getSaldo(), 0, 0);
 	}
+	
+	/* Teste para verificar se o cliente tem idade
+	 * aceitavel para ter uma conta no banco
+	 * */
+	
+	@Test
+	public void testClienteTemIdadeAceitavel() throws IdadeNaoPermitidaException {
+		
+		boolean idadeValida = gerenciamentoClientes.validaIdade(cliente01.getIdade());
+		boolean idadeValida2 = gerenciamentoClientes.validaIdade(cliente02.getIdade());
+		
+		assertTrue(idadeValida);
+		assertTrue(idadeValida2);
+
+	}
+	
+	/* Teste para verificar quando o cliente 
+	 * tem idade menor que o limite para ter uma conta no banco
+	 * */
+	
+	@Test
+	public void testClienteNaoTemIdadeAceitavel_MenorIdadeLimite() throws IdadeNaoPermitidaException {
+		Cliente clienteMenorLimite = new Cliente(idCliente01, 17, 1, "Tiago de lima", "tiago.l07@aluno.ifsc.edu", false);
+		
+		try {
+			gerenciamentoClientes.validaIdade(clienteMenorLimite.getIdade());
+			fail();
+		} catch (Exception e) {
+			assertEquals(e.getMessage(), IdadeNaoPermitidaException.MSG_IDADE_INVALIDA);
+		}
+
+	}
+	
+	/* Teste para verificar quando o cliente 
+	 * tem idade maior que o limite para ter uma conta no banco
+	 * */
+	
+	@Test
+	public void testClienteNaoTemIdadeAceitavel_MaiorIdadeLimite() throws IdadeNaoPermitidaException {
+		Cliente clienteMaiorLimite = new Cliente(idCliente02, 66, 2, "Mateus Rodrigues", "mateus@gmail.com", true);
+		
+		try {
+			gerenciamentoClientes.validaIdade(clienteMaiorLimite.getIdade());
+			fail();
+		} catch (Exception e) {
+			assertEquals(e.getMessage(), IdadeNaoPermitidaException.MSG_IDADE_INVALIDA);
+		}
+
+	}
+	
 	
 	
 

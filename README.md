@@ -1,8 +1,8 @@
-# Aplicação para aprimoramento de testes unitários em JAVA - JUnit
+# Aplicação para aprimoramento de testes unitários em JAVA - JUnit4
 
-Este repositório foi criado para colocar em prática todos os conceitos vistos sobre testes unitários em Java utilizando o framework Junit.
+Este repositório foi criado para colocar em prática todos os conceitos vistos sobre testes unitários em Java utilizando o framework JUnit4.
 
-## 💻 Sobre o repositório
+## :speech_balloon: Sobre o repositório
 
 * Aplicar o básico de TDD;
 * Adicionar vários projetos e exercícios utilizando testes unitários;
@@ -14,11 +14,8 @@ Este repositório foi criado para colocar em prática todos os conceitos vistos 
 
 ## :rocket: Conceitos e tecnologias
 * Java 8;
-* Stack de Spring;
 * JUnit 4;
-* Mockito;
-* Power Mock;
 
-## IDE de desenvolvimento:
+## :computer: IDE de desenvolvimento:
 - Eclipse
 

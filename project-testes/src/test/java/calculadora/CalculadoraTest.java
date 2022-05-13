@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CalculadorTest {
+public class CalculadoraTest {
 	
 	static Calculadora calculadora;
 	static int valor1, valor2;
@@ -36,9 +36,7 @@ public class CalculadorTest {
 	public void testSubtrairDoisValores() {
 		
 		 Calculadora calculadora = new Calculadora();
-
 		 int resultadoObtido = calculadora.subtrair(valor1, valor2);
-		 
 		 assertEquals(resultadoObtido, 5);
 	}
 	
@@ -46,9 +44,7 @@ public class CalculadorTest {
 	public void testMultiplicarDoisValores() {
 
 		Calculadora calculadora = new Calculadora();
-		
 		int resultadoObtido = calculadora.multiplicacao(valor1, valor2);
-		
 		assertEquals(resultadoObtido, 50);
 		
 	}
@@ -57,9 +53,7 @@ public class CalculadorTest {
 	public void testDividirDoisValores() {
 
 		Calculadora calculadora = new Calculadora();
-		
 		int resultadoObtido = calculadora.divisao(valor1, valor2);
-		
 		assertEquals(resultadoObtido, 2);
 	}
 	
@@ -67,11 +61,11 @@ public class CalculadorTest {
 	public void testDivisaoPorZero_LancarExcessao() {
 		
 		Calculadora calculadora = new Calculadora();
-		
 		int resultadoObtido = calculadora.divisao(valor1, 0);
-		
 		assertEquals(resultadoObtido, 0);
 		
 	}
+	
+	
 
 }
